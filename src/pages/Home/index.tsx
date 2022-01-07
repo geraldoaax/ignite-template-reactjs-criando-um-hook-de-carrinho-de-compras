@@ -31,7 +31,7 @@ const Home = (): JSX.Element => {
     return sumAmount
 
   }, {} as CartItemsAmount)
-  
+
   useEffect(() => {
     async function loadProducts() {
       const { data } = await api.get('/products')
@@ -57,7 +57,7 @@ const Home = (): JSX.Element => {
       <li>
         <img src={product.image} alt={product.title} />
         <strong>{product.title}</strong>
-        <span>(product.price)</span>
+        <span>{product.priceFormatted}</span>
         <button
           type="button"
           data-testid="add-product-button"
